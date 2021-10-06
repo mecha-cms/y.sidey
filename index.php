@@ -19,32 +19,3 @@ $GLOBALS['links'] = new Anemon((static function($links, $state, $url) {
     ksort($links);
     return $links;
 })([], $state, $url));
-
-// Data to be embedded in `<script type="application/ld+json">`
-$meta = [];
-if ($site->is('page')) {
-    $meta = [
-        '@context' => 'https://schema.org',
-        '@type' => 'BlogPosting',
-        'dateModified' => $page->exist ? date('c', filemtime($page->path)) : null,
-        'datePublished' => $page->exist ? $page->time->format('c') : null,
-        'description' => $page->description ?? $site->description,
-        'headline' => $page->title ?? $site->title,
-        'mainEntityOfPage' => [
-            '@id' => $page->url ?? null,
-            '@type' => 'WebPage'
-        ],
-        'url' => $page->url ?? null
-    ];
-} else {
-    $meta = [
-        '@context' => 'https://schema.org',
-        '@type' => 'WebSite',
-        'description' => $page->description ?? $site->description,
-        'headline' => $page->title ?? $site->title,
-        'name' => $page->title ?? $site->title,
-        'url' => $url
-    ];
-}
-
-$GLOBALS['meta'] = To::JSON($meta);

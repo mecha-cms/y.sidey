@@ -1,15 +1,9 @@
 <nav class="navigation">
   <ul>
     <li>
-      <?php if ($site->is('home')): ?>
-        <span>
-          <?= i('Home'); ?>
-        </span>
-      <?php else: ?>
-        <a href="<?= $url; ?>">
-          <?= i('Home'); ?>
-        </a>
-      <?php endif; ?>
+      <a<?= $site->is('home') ? ' class="active"' : ""; ?> href="<?= $url; ?>">
+        <?= i('Home'); ?>
+      </a>
     </li>
     <?php foreach ($links as $link): ?>
       <li>

@@ -5,7 +5,7 @@
     <meta content="Mecha <?= VERSION; ?>" name="generator">
     <meta content="width=device-width" name="viewport">
     <script type="application/ld+json">
-      <?= $meta; ?>
+      <?= self::schema(); ?>
     </script>
     <?php if ($w = w($page->description ?? $site->description)): ?>
       <meta content="<?= $w; ?>" name="description">
@@ -23,4 +23,5 @@
   </head>
   <body>
     <main role="main">
+      <?= $alert; ?>
       <?= self::header(); ?>
