@@ -32,24 +32,42 @@ pre {
   padding: .5rem;
 }
 
-.post p {
-  margin: .5rem 0;
-}
-
+.post .p,
+.post blockquote,
+.post details,
+.post dl,
+.post figure,
+.post form,
 .post h1,
 .post h2,
 .post h3,
-.post h4 {
-  margin: 1rem 0;
+.post h4,
+.post h5,
+.post h6,
+.post ol,
+.post p,
+.post pre,
+.post table,
+.post ul {
+  margin: .5rem 0;
 }
 
+.post ol,
+.post ul {
+  margin-left: 2rem;
+}
+
+.post h1:first-child,
 .post h2:first-child,
-.project h2:first-child,
-.photo h2:first-child {
+.post h3:first-child,
+.post h4:first-child,
+.post h5:first-child,
+.post h6:first-child {
   margin-top: 0;
 }
 
 .meta {
+  display: block;
   margin: 2rem 0;
 }
 
@@ -131,19 +149,6 @@ b {
   font-weight: bold;
 }
 
-.photos ul {
-  list-style: none;
-}
-
-.photos li {
-  margin-bottom: 1.5rem;
-}
-
-.photo picture,
-.project picture {
-  margin-bottom: 0.5rem;
-}
-
 .posts ul,
 header ul {
   list-style: none;
@@ -157,16 +162,14 @@ header ul {
 }
 
 .posts li a,
-.posts li div,
-.projects li a {
+.posts li div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   text-decoration: none;
 }
 
-.posts li time,
-.projects li time {
+.posts li time {
   padding-left: 1rem;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
@@ -185,22 +188,15 @@ main {
     display: inline;
     margin-right: 1rem;
   }
-
   .logo {
     padding-bottom: 1rem;
   }
-
   header ul {
     border-bottom: 1px solid #edf2f7;
     padding-bottom: 2rem;
   }
-
   nav ul {
     border-right: 0;
-  }
-
-  .photos ul {
-    margin-top: 0.5rem;
   }
 }
 
@@ -212,6 +208,28 @@ section {
   flex-direction: column;
 }
 
-figcaption {
+caption, figcaption {
   font-size: smaller;
+}
+
+.alert p {
+  background: rgba(255, 255, 0, .25);
+  padding: .5rem .75rem;
+}
+
+.table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table caption {
+  caption-side: bottom;
+}
+
+.table th,
+.table td {
+  padding: .25rem .5rem;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid;
 }
