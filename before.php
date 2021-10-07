@@ -23,5 +23,4 @@
   </head>
   <body>
     <main role="main">
-      <?= $alert; ?>
       <?= self::header(); ?>

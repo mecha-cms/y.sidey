@@ -3,7 +3,10 @@
 return [
     'x' => [
         'page' => [
-            'page' => ['type' => 'Markdown']
+            'page' => [
+                'chunk' => 50,
+                'type' => 'Markdown'
+            ]
         ]
     ]
 ];
