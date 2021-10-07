@@ -1,5 +1,6 @@
 <?= self::before(); ?>
 <section class="posts">
+  <?= $alert; ?>
   <?php if ($pages->count): ?>
     <ul>
       <?php foreach ($pages as $page): ?>
@@ -24,6 +25,12 @@
       <?= i('No %s yet.', 'pages'); ?>
     </p>
   <?php endif; ?>
-  <!-- TODO: Pagination -->
+  <p class="meta">
+    <?php if ($next = $pager->next): ?>
+      <a href="<?= $next->link; ?>" rel="next">
+        <?= i('Next'); ?>
+      </a>
+    <?php endif; ?>
+  </p>
 </section>
 <?= self::after(); ?>
