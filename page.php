@@ -1,5 +1,6 @@
 <?= self::before(); ?>
 <section class="post">
+  <?= $alert; ?>
   <h2>
     <?= $page->title; ?>
   </h2>
@@ -8,8 +9,13 @@
     <p class="meta">
       <time datetime="<?= $page->time->format('c'); ?>">
         <?= $page->time('%B %d, %Y'); ?>
-      </time><?php if ($tags = $page->tags): ?>
-        <!-- TODO: List all tags here... -->
+      </time><?php if (count($tags = $page->tags)): ?>
+        &nbsp;&middot;&nbsp;
+        <?php foreach ($tags as $k => $tag): ?>
+          <?= 0 !== $k ? ', ' : ""; ?><a href="<?= $tag->link; ?>" rel="tag">
+            <?= $tag->title; ?>
+          </a>
+        <?php endforeach; ?>
       <?php endif; ?>
     </p>
   <?php endif; ?>
