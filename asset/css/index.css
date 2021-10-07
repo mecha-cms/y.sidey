@@ -9,12 +9,12 @@
 }
 
 body {
-  font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  line-height: 1.5;
-  font-size: 1rem;
   color: #16171a;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 nav ul {
@@ -85,8 +85,8 @@ pre code {
 }
 
 pre {
-  padding: 1rem;
   overflow-x: auto;
+  padding: 1rem;
 }
 
 img {
@@ -95,8 +95,8 @@ img {
 
 hr {
   background: #000;
-  height: 1px;
   border: 0;
+  height: 1px;
 }
 
 header {
@@ -111,8 +111,8 @@ header a {
 
 header li {
   margin-bottom: .2rem;
-  text-align: right;
   margin-right: 2rem;
+  text-align: right;
 }
 
 header a.active {
@@ -125,8 +125,8 @@ section {
 }
 
 blockquote {
-  font-style: italic;
   border-left: 5px solid #ececec;
+  font-style: italic;
   padding-left: 1rem;
 }
 
@@ -135,9 +135,9 @@ h2,
 h3,
 h4,
 h5 {
+  font-weight: 600;
   line-height: 1;
   margin: 1rem 0;
-  font-weight: 600;
 }
 
 section h1:first-child {
@@ -163,23 +163,23 @@ header ul {
 
 .posts li a,
 .posts li div {
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .posts li time {
+  font-variant-numeric: tabular-nums;
   padding-left: 1rem;
   white-space: nowrap;
-  font-variant-numeric: tabular-nums;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
-  max-width: 60rem;
   margin: 2rem auto;
+  max-width: 60rem;
   padding: 1rem;
 }
 
@@ -189,6 +189,7 @@ main {
     margin-right: 1rem;
   }
   .logo {
+    margin-top: 0;
     padding-bottom: 1rem;
   }
   header ul {
@@ -201,15 +202,19 @@ main {
 }
 
 section {
+  display: flex;
   flex-basis: 0;
+  flex-direction: column;
   flex-grow: 999;
   min-width: 70%;
-  display: flex;
-  flex-direction: column;
 }
 
 caption, figcaption {
   font-size: smaller;
+}
+
+.alert:first-child {
+  margin-top: 0;
 }
 
 .alert p {
@@ -228,8 +233,13 @@ caption, figcaption {
 
 .table th,
 .table td {
+  border: 1px solid;
   padding: .25rem .5rem;
   text-align: left;
   vertical-align: top;
-  border: 1px solid;
+}
+
+.width {
+  display: block;
+  width: 100%;
 }
