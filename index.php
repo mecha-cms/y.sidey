@@ -1,12 +1,21 @@
 <?php
 
-$z = defined('DEBUG') && DEBUG ? '.' : '.min.';
-Asset::set(__DIR__ . DS . 'asset' . DS . 'css' . DS . 'index' . $z . 'css', 20);
+$defaults = [
+    'x.comment.page.type' => 'Markdown',
+    'x.page.page.type' => 'Markdown'
+];
 
-$GLOBALS['links'] = new Anemon((static function($links, $state, $url) {
-    $index = LOT . DS . 'page' . strtr($state->path, '/', DS) . '.page';
+foreach ($defaults as $k => $v) {
+    !State::get($k) && State::set($k, $v);
+}
+
+$z = defined('TEST') && TEST ? '.' : '.min.';
+Asset::set(__DIR__ . D . 'index' . $z . 'css', 20);
+
+$GLOBALS['links'] = new Anemone((static function ($links, $state, $url) {
+    $index = LOT . D . 'page' . D . trim(strtr($state->route, '/', D), D) . '.page';
     $path = $url->path . '/';
-    foreach (g(LOT . DS . 'page', 'page') as $k => $v) {
+    foreach (g(LOT . D . 'page', 'page') as $k => $v) {
         // Exclude home page
         if ($k === $index) {
             continue;
