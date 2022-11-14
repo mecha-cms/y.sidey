@@ -2,6 +2,9 @@
 title: Sidey
 description: Sidey is a simple and minimalistic Jekyll blogging theme, ported to Mecha.
 image: /lot/y/sidey/index.png
+images:
+- /lot/y/sidey/index.png
+- /lot/y/sidey/index/1.png
 author: Taufik Nurrohman
 link: https://github.com/ronv/sidey
 type: Markdown
