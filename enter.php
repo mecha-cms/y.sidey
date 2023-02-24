@@ -14,12 +14,12 @@
       <!-- Prevent search engines from indexing pages with `archive` state -->
       <meta content="noindex" name="robots">
     <?php endif; ?>
-    <meta content="<?= w($page->author); ?>" name="author">
+    <meta content="<?= eat($page->author); ?>" name="author">
     <title>
       <?= w($t->reverse->join(' - ')); ?>
     </title>
-    <link href="<?= $url; ?>/favicon.ico" rel="icon">
-    <link href="<?= $url->current(false, false); ?>" rel="canonical">
+    <link href="<?= eat($url); ?>/favicon.ico" rel="icon">
+    <link href="<?= eat($url->current(false, false)); ?>" rel="canonical">
   </head>
   <body>
     <main role="main">

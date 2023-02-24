@@ -8,13 +8,13 @@
     <?= $page->content; ?>
     <?php if ($site->has('parent')): ?>
       <p class="meta">
-        <time datetime="<?= $page->time->format('c'); ?>">
+        <time datetime="<?= eat($page->time->format('c')); ?>">
           <?= $page->time('%B %d, %Y'); ?>
         </time><?php if (count($tags = $page->tags)): ?>
           &nbsp;&middot;&nbsp;
-          <?php foreach ($tags as $k => $tag): ?>
-            <?= 0 !== $k ? ', ' : ""; ?><a href="<?= $tag->link; ?>" rel="tag">
-              <?= $tag->title; ?>
+          <?php $v = false; foreach ($tags as $k => $tag): ?>
+            <?= false === $v ? "" : ', '; ?><a href="<?= eat($tag->link); ?>" rel="tag">
+              <?= $v = $tag->title; ?>
             </a>
           <?php endforeach; ?>
         <?php endif; ?>

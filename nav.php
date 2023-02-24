@@ -1,13 +1,13 @@
 <nav class="navigation">
   <ul>
     <li>
-      <a<?= $site->is('home') ? ' class="active"' : ""; ?> href="<?= $url; ?>">
+      <a<?= $site->is('home') ? ' class="active"' : ""; ?> href="<?= eat($url); ?>">
         <?= i('Home'); ?>
       </a>
     </li>
     <?php foreach ($links as $link): ?>
       <li>
-        <a<?= $link->current ? ' class="active"' : ""; ?> href="<?= $link->link ?: $link->url; ?>">
+        <a<?= $link->current ? ' class="active"' : ""; ?> href="<?= eat($link->link ?: $link->url); ?>">
           <?= $link->title; ?>
         </a>
       </li>

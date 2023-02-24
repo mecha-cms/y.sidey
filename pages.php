@@ -7,15 +7,15 @@
         <?php foreach ($pages as $page): ?>
           <li>
             <?php if ($link = $page->link): ?>
-              <a href="<?= $link; ?>" rel="nofollow" target="_blank">
+              <a href="<?= eat($link); ?>" rel="nofollow" target="_blank">
                 <?= $page->title; ?>
               </a>
             <?php else: ?>
-              <a href="<?= $page->url; ?>">
+              <a href="<?= eat($page->url); ?>">
                 <?= $page->title; ?>
               </a>
             <?php endif; ?>
-            <time datetime="<?= $page->time->format('c'); ?>">
+            <time datetime="<?= eat($page->time->format('c')); ?>">
               <?= $page->time->format('d-m-Y'); ?>
             </time>
           </li>
@@ -37,7 +37,7 @@
     <?php endif; ?>
     <p class="meta">
       <?php if ($next = $pager->next): ?>
-        <a href="<?= $next->link; ?>" rel="next" title="<?= $next->description; ?>">
+        <a href="<?= eat($next->link); ?>" rel="next" title="<?= eat($next->description); ?>">
           <?= $next->title ?? i('Next'); ?>
         </a>
       <?php endif; ?>
