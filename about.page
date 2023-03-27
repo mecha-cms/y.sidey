@@ -9,12 +9,6 @@ author: Taufik Nurrohman
 link: https://github.com/ronv/sidey
 type: Markdown
 version: 2.0.0
-
-use:
-  '.\lot\x\feed': 0
-  '.\lot\x\search': 0
-  '.\lot\x\sitemap': 0
-  '.\lot\x\tag': 0
 ...
 
 This layout exists thanks to the completion of [50 USD bounty](https://github.com/mecha-cms/bounty/issues/3), which has
