@@ -12,4 +12,4 @@ been financed by the following people:
 
 Name | Donation
 ---- | --------
-[rfatech](https://github.com/rfatech) | 50 USD
+[@rfatech](https://github.com/rfatech) | 50 USD
