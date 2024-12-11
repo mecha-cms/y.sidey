@@ -8,7 +8,7 @@ images:
 author: Taufik Nurrohman
 link: https://github.com/ronv/sidey
 type: Markdown
-version: 2.0.0
+version: 2.0.1
 ...
 
 This layout exists thanks to the completion of [50 USD bounty](https://github.com/mecha-cms/bounty/issues/3), which has
