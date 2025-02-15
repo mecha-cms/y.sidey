@@ -14,7 +14,7 @@ Asset::set(__DIR__ . D . 'index' . $z . 'css', 20);
 
 lot('links', $links = new Anemone((static function ($links, $state, $url) {
     $index = LOT . D . 'page' . D . trim(strtr($state->route ?? 'index', '/', D), D) . '.page';
-    $path = $url->path . '/';
+    $route = $url->path . '/';
     foreach (g(LOT . D . 'page', 'page') as $k => $v) {
         // Exclude home page
         if ($k === $index) {
@@ -22,7 +22,7 @@ lot('links', $links = new Anemone((static function ($links, $state, $url) {
         }
         $v = new Page($k);
         // Add current state
-        $v->current = 0 === strpos($path, '/' . $v->name . '/');
+        $v->current = 0 === strpos($route, $v->route . '/');
         $links[$k] = $v;
     }
     ksort($links);
